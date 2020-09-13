@@ -1,0 +1,24 @@
+# Collection {#collection}
+
+```{r get-labels, include=FALSE}
+labs = knitr::all_labels()
+labs = setdiff(labs, c("setup", "get-labels"))
+```
+
+```{r, include=FALSE}
+# Specify example types
+example_types <- c("example-type1", "example-type2", "example-type3")
+filtered_labs <- lapply(example_types, function(example_types) labs[mapply(function(s) startsWith(s, example_types), labs)])
+```
+
+### `r example_types[[1]]`
+```{block, ref.label=filtered_labs[[1]]}
+```
+
+### `r example_types[[2]]`
+```{block, ref.label=filtered_labs[[2]]}
+```
+
+### `r example_types[[3]]`
+```{block, ref.label=filtered_labs[[3]]}
+```
